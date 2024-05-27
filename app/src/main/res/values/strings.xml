@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Zirkon</string>
+    <string name="label_home">Home</string>
+    <string name="label_reviews">Reviews</string>
+    <string name="label_profile">Profile</string>
+    <string name="label_all">Всі</string>
+    <string name="popular">Популярні</string>
+    <string name="now_showing">Тепер в прокаті</string>
+    <string name="see_all">Переглянути всі</string>
+</resources>
