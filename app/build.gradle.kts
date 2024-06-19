@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kapt)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -33,12 +34,16 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
             signingConfig = signingConfigs.getByName("release")
+        }
+        debug  {
+            isMinifyEnabled = false
+            applicationIdSuffix = ".debug"
         }
     }
     compileOptions {
@@ -96,4 +101,6 @@ dependencies {
     kapt(libs.room.compiler)
     implementation(libs.room.ktx)
     implementation(libs.room.runtime)
+
+    implementation(libs.kotlinx.serialization.json)
 }

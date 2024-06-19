@@ -11,32 +11,39 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.voloshynroman.zirkon.presentation.navigation.Routes
 import com.voloshynroman.zirkon.presentation.pages.movies.MoviesScreen
+import com.voloshynroman.zirkon.presentation.pages.movies.MoviesViewModel
+import kotlin.reflect.KClass
 
 /**
  * @author Roman Voloshyn (Created on 24.05.2024)
  */
 
-typealias Navigation = (String) -> Unit
+typealias Navigation = () -> Unit
 
 @Composable
 fun MainNavigation(
     navController: NavHostController,
-    startDestination: String = Routes.MoviesScreen.route
+    startDestination: KClass<Routes.MoviesScreen> = Routes.MoviesScreen::class,
+    onMovieDetailsNavigation: (Long) -> Unit
 ) {
     NavHost(
         navController = navController,
         startDestination = startDestination
     ) {
-        composable(Routes.MoviesScreen.route) {
-            MoviesScreen(hiltViewModel())
+        composable<Routes.MoviesScreen> {
+            val viewModel = hiltViewModel<MoviesViewModel>()
+
+            MoviesScreen(viewModel = viewModel) { movieId ->
+                onMovieDetailsNavigation.invoke(movieId)
+            }
         }
 
-        composable(Routes.Reviews.route) {
+        composable<Routes.Reviews> {
             Text(text = "Reviews screen", modifier = Modifier.fillMaxSize(), textAlign = TextAlign.Center)
             // MoviesScreen(hiltViewModel())
         }
 
-        composable(Routes.ProfileScreen.route) {
+        composable<Routes.ProfileScreen> {
             Text(text = "Profile screen", modifier = Modifier.fillMaxSize(), textAlign = TextAlign.Center)
              // MoviesScreen(hiltViewModel())
         }

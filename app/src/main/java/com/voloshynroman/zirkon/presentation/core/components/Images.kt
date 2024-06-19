@@ -1,4 +1,4 @@
-package com.voloshynroman.zirkon.core.components
+package com.voloshynroman.zirkon.presentation.core.components
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -12,7 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import com.voloshynroman.zirkon.core.Constants
+import com.voloshynroman.zirkon.presentation.core.ImageHostUrl
+import com.voloshynroman.zirkon.utilities.toImageUrl
 
 /**
  * @author Roman Voloshyn (Created on 22.05.2024)
@@ -29,7 +30,7 @@ fun BigPosterImage(imageUrl: String, modifier: Modifier = Modifier) {
         shape = RoundedCornerShape(5.dp)
     ) {
         AsyncImage(
-            model = Constants.ImageHostUrl + imageUrl,
+            model = imageUrl.toImageUrl(),
             contentDescription = "Big film poster",
             modifier = Modifier
                 .fillMaxSize(),
@@ -50,7 +51,7 @@ fun SmallPosterImage(
         shape = RoundedCornerShape(5.dp)
     ) {
         AsyncImage(
-            model = Constants.ImageHostUrl + imageUrl,
+            model = imageUrl.toImageUrl(),
             contentDescription = "Small film poster",
             modifier = Modifier
                 .fillMaxSize(),

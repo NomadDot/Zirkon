@@ -1,23 +1,33 @@
 package com.voloshynroman.zirkon.presentation.navigation
 
-import com.voloshynroman.zirkon.utilities.emptyString
+import kotlinx.serialization.Serializable
+
 
 /**
  * @author Roman Voloshyn (Created on 17.05.2024)
  */
 
-sealed class Routes(val route: String, val argument: String = emptyString()) {
-    data object SplashScreen: Routes("splash")
+sealed class Routes {
+    @Serializable
+    data object SplashScreen: Routes()
 
-    data object SignInScreen: Routes("signIn")
-    data object SignUpScreen: Routes("signUp")
+    @Serializable
+    data object SignInScreen: Routes()
+    @Serializable
+    data object SignUpScreen: Routes()
 
-    data object MainScreen: Routes("main")
+    @Serializable
+    data object MainScreen: Routes()
 
-    data object MoviesScreen: Routes("movies")
-    data object ProfileScreen: Routes("profile")
-    data object Reviews: Routes("reviews")
+    @Serializable
+    data object MoviesScreen: Routes()
+    @Serializable
+    data object ProfileScreen: Routes()
+    @Serializable
+    data object Reviews: Routes()
 
-    data object MovieDetailsScreen: Routes("movie/{id}")
-
+    @Serializable
+    data class MovieDetailsScreen(
+        val movieId: Long
+    ): Routes()
 }

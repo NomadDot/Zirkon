@@ -1,10 +1,10 @@
 package com.voloshynroman.zirkon.presentation.activity
 
 import androidx.lifecycle.viewModelScope
-import com.voloshynroman.zirkon.core.base.BaseViewModel
-import com.voloshynroman.zirkon.core.common.Dialog
-import com.voloshynroman.zirkon.core.common.Progress
-import com.voloshynroman.zirkon.core.common.UiState
+import com.voloshynroman.zirkon.presentation.core.base.BaseViewModel
+import com.voloshynroman.zirkon.presentation.core.common.Dialog
+import com.voloshynroman.zirkon.presentation.core.common.Progress
+import com.voloshynroman.zirkon.presentation.core.common.UiState
 import com.voloshynroman.zirkon.domain.repositories.genre.IGenreRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -18,7 +18,7 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor(
     private val genreRepository: IGenreRepository
-): BaseViewModel<UiState, MainUiEvent, Progress, Dialog>() {
+): BaseViewModel<UiState, MainUiEvent>() {
     override fun handleUiEvent(uiEvent: MainUiEvent) {
         when(uiEvent) {
             MainUiEvent.LoadGenres -> loadGenres()

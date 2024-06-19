@@ -1,14 +1,9 @@
 package com.voloshynroman.zirkon.presentation.pages.main
 
-import com.voloshynroman.zirkon.core.base.BaseViewModel
-import com.voloshynroman.zirkon.core.common.Dialog
-import com.voloshynroman.zirkon.core.common.Progress
-import com.voloshynroman.zirkon.data.network.RestApi
-import com.voloshynroman.zirkon.domain.repositories.movie.IMoviesRepository
+import com.voloshynroman.zirkon.presentation.core.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
-import kotlinx.coroutines.flow.zip
+import kotlinx.coroutines.awaitAll
 import javax.inject.Inject
 
 /**
@@ -17,6 +12,21 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-): BaseViewModel<MainUiState, MainUiEvent, Progress, Dialog>() {
+): BaseViewModel<MainUiState, MainUiEvent>() {
     override fun handleUiEvent(uiEvent: MainUiEvent) {}
+
+    fun fgjsdgn() {
+        launch {
+            val parallelJobs = listOf(
+                async {
+
+                },
+                async {
+
+                }
+            ).awaitAll()
+            (1..3).toList().parallelStream()
+                .map {  }
+        }
+    }
 }

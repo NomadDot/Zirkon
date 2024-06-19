@@ -4,7 +4,9 @@ import com.voloshynroman.zirkon.data.database.AppDatabase
 import com.voloshynroman.zirkon.domain.repositories.ApiClient
 import com.voloshynroman.zirkon.domain.repositories.genre.GenreRepository
 import com.voloshynroman.zirkon.domain.repositories.genre.IGenreRepository
+import com.voloshynroman.zirkon.domain.repositories.movie.IMovieDetailsRepository
 import com.voloshynroman.zirkon.domain.repositories.movie.IMoviesRepository
+import com.voloshynroman.zirkon.domain.repositories.movie.MovieDetailsRepository
 import com.voloshynroman.zirkon.domain.repositories.movie.MoviesRepository
 import dagger.Module
 import dagger.Provides
@@ -28,4 +30,9 @@ object RepositoryModule {
     @ViewModelScoped
     fun provideGenreRepository(api: ApiClient, database: AppDatabase): IGenreRepository =
         GenreRepository(api, database)
+
+    @Provides
+    @ViewModelScoped
+    fun provideMovieDetailsRepository(api: ApiClient): IMovieDetailsRepository =
+        MovieDetailsRepository(api)
 }

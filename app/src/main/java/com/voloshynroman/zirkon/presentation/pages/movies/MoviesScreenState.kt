@@ -1,6 +1,6 @@
 package com.voloshynroman.zirkon.presentation.pages.movies
 
-import com.voloshynroman.zirkon.core.common.UiState
+import com.voloshynroman.zirkon.presentation.core.common.UiState
 import com.voloshynroman.zirkon.domain.models.NowShowingFilm
 import com.voloshynroman.zirkon.domain.models.PopularFilm
 

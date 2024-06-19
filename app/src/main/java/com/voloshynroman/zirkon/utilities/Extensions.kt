@@ -1,12 +1,15 @@
 package com.voloshynroman.zirkon.utilities
 
-import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.runtime.Composable
+import com.voloshynroman.zirkon.presentation.core.ImageHostUrl
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 import java.util.UUID
-import java.util.concurrent.Flow
+import java.util.concurrent.TimeUnit
 import kotlin.random.Random
 
 /**
@@ -30,3 +33,5 @@ fun <T> List<T>?.letNotEmpty(
 suspend fun <T> flowableApi(request: () -> T) = flow<T> {
     emit(request.invoke())
 }.flowOn(Dispatchers.IO)
+
+fun String.toImageUrl(): String = ImageHostUrl + this

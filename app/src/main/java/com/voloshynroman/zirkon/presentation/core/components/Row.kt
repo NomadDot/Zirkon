@@ -1,4 +1,4 @@
-package com.voloshynroman.zirkon.core.components
+package com.voloshynroman.zirkon.presentation.core.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -18,7 +19,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.voloshynroman.zirkon.domain.models.Genre
-import com.voloshynroman.zirkon.presentation.theme.HighlightBackgroundColor
 import com.voloshynroman.zirkon.presentation.theme.ZirkonTypography
 
 /**
@@ -31,12 +31,13 @@ fun GenreItem(model: Genre, modifier: Modifier = Modifier, onClick: (() -> Unit)
         modifier = modifier
             .wrapContentWidth()
             .wrapContentHeight()
-            .background(color = HighlightBackgroundColor, CircleShape)
+            .background(color = MaterialTheme.colorScheme.background, CircleShape)
             .clickable { onClick?.invoke() }
     ) {
         Text(
             text = model.name,
             style = ZirkonTypography.headlineSmall,
+            color = MaterialTheme.colorScheme.tertiary,
             modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp),
         )
     }

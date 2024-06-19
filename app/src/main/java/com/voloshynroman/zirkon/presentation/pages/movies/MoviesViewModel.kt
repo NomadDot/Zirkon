@@ -1,10 +1,7 @@
 package com.voloshynroman.zirkon.presentation.pages.movies
 
-import com.voloshynroman.zirkon.core.base.BaseViewModel
-import com.voloshynroman.zirkon.core.common.Dialog
-import com.voloshynroman.zirkon.core.common.Progress
+import com.voloshynroman.zirkon.presentation.core.base.BaseViewModel
 import com.voloshynroman.zirkon.domain.repositories.movie.IMoviesRepository
-import com.voloshynroman.zirkon.presentation.pages.main.MainUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -15,7 +12,7 @@ import javax.inject.Inject
 @HiltViewModel
 class MoviesViewModel @Inject constructor(
     private val moviesRepository: IMoviesRepository
-): BaseViewModel<MoviesScreenState, MoviesUiEvent, Progress, Dialog>() {
+): BaseViewModel<MoviesScreenState, MoviesUiEvent>() {
 
     override fun handleUiEvent(uiEvent: MoviesUiEvent) {
         when(uiEvent) {

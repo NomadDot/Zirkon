@@ -1,4 +1,4 @@
-package com.voloshynroman.zirkon.core.components
+package com.voloshynroman.zirkon.presentation.core.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -16,16 +16,16 @@ import androidx.compose.material.icons.rounded.Edit
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.voloshynroman.zirkon.presentation.theme.LightTextAccent
 import com.voloshynroman.zirkon.presentation.theme.SeeMoreStrokeColor
 import com.voloshynroman.zirkon.presentation.theme.SeeMoreTextColor
-import com.voloshynroman.zirkon.presentation.theme.AccentPrimary
 import com.voloshynroman.zirkon.presentation.theme.TextColorTitle
 
 /**
@@ -43,7 +43,7 @@ fun CategoryButton(
             .wrapContentWidth()
             .wrapContentHeight()
             .border(1.dp, SeeMoreStrokeColor, CircleShape)
-            .background(color = Color.White)
+            .background(color = MaterialTheme.colorScheme.primaryContainer)
             .clickable { onClick?.invoke() }
     ) {
         Text(
@@ -88,7 +88,7 @@ fun DefaultFloatButton(
 ) {
     FloatingActionButton(
         onClick = onClick::invoke,
-        containerColor = AccentPrimary,
+        containerColor = LightTextAccent,
         contentColor = TextColorTitle,
         modifier = modifier
     ) {

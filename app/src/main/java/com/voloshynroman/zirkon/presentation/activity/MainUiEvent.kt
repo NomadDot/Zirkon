@@ -1,6 +1,6 @@
 package com.voloshynroman.zirkon.presentation.activity
 
-import com.voloshynroman.zirkon.core.common.UiEvent
+import com.voloshynroman.zirkon.presentation.core.common.UiEvent
 
 /**
  * @author Roman Voloshyn (Created on 27.05.2024)

@@ -7,4 +7,7 @@
     <string name="popular">Популярні</string>
     <string name="now_showing">Тепер в прокаті</string>
     <string name="see_all">Переглянути всі</string>
+    <string name="length_of_film">Тривалість</string>
+    <string name="description">Опис</string>
+    <string name="box_office">Касові збори</string>
 </resources>

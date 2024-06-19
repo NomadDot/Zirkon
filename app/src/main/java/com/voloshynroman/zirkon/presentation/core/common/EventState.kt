@@ -1,10 +1,10 @@
-package com.voloshynroman.zirkon.core.common
+package com.voloshynroman.zirkon.presentation.core.common
 
 /**
  * @author Roman Voloshyn (Created on 15.05.2024)
  */
 
-open interface UiEvent
+interface UiEvent
 
 data class EventState<P : Progress, D : Dialog>(
     val progress: ProgressData<P>? = null,

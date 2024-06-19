@@ -61,7 +61,7 @@ fun SplashScreen(
 
         LaunchedEffect(key1 = Unit) {
             delay(500)
-            navigateTo.invoke(Routes.MainScreen.route)
+            navigateTo.invoke(Routes.MainScreen)
         }
     }
 }

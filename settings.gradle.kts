@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Zirkon"
 include(":app")
+include(":domain")

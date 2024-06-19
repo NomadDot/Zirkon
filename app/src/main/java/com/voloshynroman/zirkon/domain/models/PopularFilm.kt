@@ -11,9 +11,7 @@ data class PopularFilm(
     val id: Long = randomId(),
     val posterUrl: String = emptyString(),
     val title: String = emptyString(),
-    private val rating: Double = 0.0,
+    val rating: Rating = Rating(),
+    val description: String = emptyString(),
     val genres: List<Genre> = emptyList()
-) {
-    val formattedRating = rating.toString().take(3);
-    val formattedDuration = "1h 46m"
-}
+)
